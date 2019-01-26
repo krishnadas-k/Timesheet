@@ -1,0 +1,69 @@
+h1{
+    color: grey;
+    text-align: center;        
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    td, th{
+        border: 1px solid #ddd;
+        padding: 7px;
+    }  
+    tr:nth-child(even){background-color: #f2f2f2;}
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #1c6ca5;
+        color: white;
+      }
+      tr:hover {background-color: #ddd;}
+  }
+
+  button {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;  
+    width: 100px;
+    -webkit-appearance: button;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+} 
+
+select{
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+input[type="number"] {
+    width: 100%; 
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+}
+
+  
+ 
+

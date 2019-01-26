@@ -1,0 +1,48 @@
+<h1>{{selectedEmployee.name}}'s Time sheet </h1>
+
+<div>
+    <div style="display:inline-block">
+        <div>
+            <label>Employee</label>
+            <select class="custom-select" (change)="changeTimesheet($event.target.value)" [value]="selectedEmployee.id">
+                <option *ngFor="let item of employees" value={{item.id}}>
+                    {{item.name}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div style="display:inline-block;float:right;">
+        <select class="custom-select" (change)="onTaskSelectionChange($event.target.value)">
+            <option value="-1">--Select--</option>
+            <option *ngFor="let item of notAddedTasks" value={{item.id}}>
+                {{item.name}}
+            </option>
+        </select>
+        <button (click)="onAddTaskWindowOpen()">Add Task</button>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>Task Name</th>
+        <th *ngFor="let dt of timeSheet">{{dt.date | date:'EEE d MMM'}}</th>
+    </tr>
+
+    <tr *ngFor="let item of currentTaskNames">
+        <td>{{item}}</td>
+        <td *ngFor="let dt of timeSheet"> <input type="number" [(ngModel)]="findEffortLog(dt.effortLogs, [item]).effortInHrs"
+            /></td>
+
+    </tr>
+    <tr>
+        <td>Total Effort</td>
+        <td *ngFor="let dt of timeSheet">{{findTotalEffort(dt.effortLogs, [item])}}</td>
+    </tr>
+</table>
+
+<div>
+    <span style="float:right">
+        <button (click)=goBack()>Back to List</button>
+        <button (click)="save()">Save</button>
+    </span>
+</div>

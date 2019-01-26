@@ -10,8 +10,8 @@
     <tr *ngFor="let item of employees">
         <td>{{item.id}}</td>
         <td>{{item.code}}</td>
-        <td>{{item.name}}</td>
-        <td></td>
-        <td></td>
+        <td> <a routerLink="/timesheet/{{item.id}}">{{item.name}}</a></td>        
+        <td>{{item.totalEffort | number:'1.0-2'}}</td>
+        <td>{{item.avgEffort | number:'1.0-2'}}</td>
     </tr>
 </table>
